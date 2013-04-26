@@ -1,0 +1,295 @@
+@import url('jquery-ui.css');
+
+root {
+    display: block;
+}
+
+body, html {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: #cfcfcf;
+}
+
+body {
+    font-family: "Times New Roman",Georgia,Serif;
+    font-size: 15px;
+    overflow: hidden;
+
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+::selection {
+    background:transparent;
+}
+
+/* Action styles */
+
+.hovered,
+.activated {
+    background: silver;
+}
+
+/* Widgets */
+
+/*** ToolBar Begin ***/
+.tool-bar {
+    height: 50px;
+    border-bottom: 1px solid gray;
+    line-height: 20px;
+}
+
+.tool-bar input{
+    height: 40px;
+    width: 40px;
+    margin: 2px;
+    padding: 3px;
+}
+/*** ToolBar End ***/
+
+/*** MenuBar Begin ***/
+.menu-bar {
+    border-bottom: 1px solid silver;
+    width: 100%;
+}
+
+.menu-bar * {
+    cursor:pointer;
+}
+
+.menu-bar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-bar > .main-menu {
+    cursor:pointer;
+    padding-left: 10px;
+}
+
+.menu-bar > .main-menu > li {
+    display: inline;
+    padding: 3px 5px;
+    margin: 0 2px;
+}
+
+.menu-bar ul {
+    padding: 2px;
+}
+/*** MenuBar End ***/
+
+/*** Menu Begin ***/
+.drop-menu {
+    background: #cfcfcf;
+    border: 1px solid gray;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.drop-menu > li {
+    padding: 5px;
+    padding-right: 30px;
+    padding-left: 30px;
+    min-width: 150px;
+    white-space: nowrap;
+}
+/*** Menu End ***/
+
+/*** GridView Begin ***/
+
+.layout .grid > *:not(.ui-resizable-handle):not(.layout) {
+    margin: 5px;
+}
+
+.layout .grid .ui-resizable-e {
+    width: 9px;
+    right: -4.5px;
+    background: #cfcfcf url(icons/16x16/resize-handle-vertical.png) no-repeat center center;
+}
+
+.layout .grid .ui-resizable-s {
+    bottom: -4.5px;
+    height: 9px;
+    background: #cfcfcf url(icons/16x16/resize-handle-horizontal.png) no-repeat center center;
+}
+
+.vertical-resize-helper {
+    border-right: 3px solid gray;
+}
+.horizontal-resize-helper {
+    border-bottom: 3px solid gray;
+}
+/*** GridView End ***/
+
+/*** Dialog Begin ***/
+.dialog-box {
+    border: 1px solid gray;
+    position: absolute;
+    background: #cfcfcf;
+    z-index: 9999;
+}
+
+.dialog-box .dialog-box-title-bar{
+    background: silver;
+    border-bottom: 1px solid gray;
+    height: 19px;
+    line-height: 19px;
+    padding: 2px;
+    text-align: right;
+    display: block;
+    position: relative;
+}
+
+.dialog-box .dialog-box-close {
+    position: absolute;
+    white-space: nowrap;
+    right: 0;
+    top: 2px;
+    padding: 1px;
+    width: 16px;
+    height: 16px;
+    background: url(icons/16x16/window-close.gif) center no-repeat;
+}
+
+.dialog-box .dialog-box-title {
+    display: block;
+    padding-right: 20px;
+    overflow: hidden;
+    text-align: left;
+    text-indent: 10px;
+}
+
+.dialog-box .dialog-box-content {
+    padding: 2px;
+    overflow: auto;
+    position: static;
+}
+/*** Dialog End ***/
+
+/*** MessageBox ***/
+.message-box-icon {
+    float:left;
+    margin: 5px;
+}
+
+.message-box-button-wrapper {
+    clear: both;
+    text-align: center;
+    margin: 5px;
+}
+/*** MessageBox END ***/
+
+/*** TreeView Begin ***/
+.tree-view {
+    background: white;
+    border: 1px solid gray;
+    padding: 2px;
+    overflow: auto;
+}
+
+.tree-view ul {
+    margin: 0;
+    padding-left: 30px;
+}
+
+.tree-view ul li > label{
+    min-width: 60px;
+    padding: 2px 5px;
+    display: block;
+    border: 1px dotted transparent;
+    white-space: nowrap;
+}
+
+.tree-view ul li {
+    list-style-image: url('icons/16x16/file.png');
+}
+
+.tree-view ul li.node {
+    list-style-image: url('icons/16x16/folder.png');
+}
+
+.tree-view ul li.node > label:before {
+    content: '▾ ';
+}
+
+.tree-view ul li.colapsed > label:before {
+    content: '▸ ';
+}
+
+.tree-view .activated {
+    border-color: gray;
+}
+/*** TreeView End ***/
+
+/*** FashNotification Begin ***/
+
+.flash-notification {
+    border: 1px solid black;
+    background: khaki;
+    color: black;
+    text-align: center;
+}
+/*** FlashNotification End ***/
+
+/*** TableView Begin ***/
+.table-view {
+    background: white;
+    overflow: auto;
+    border: 1px solid gray;
+}
+
+.table-view td,
+.table-view th {
+    border: 1px solid gray;
+    padding: 5px 10px;
+}
+
+.table-view th {
+    background: silver;
+}
+/*** TableView End ***/
+
+/*** Separator ***/
+.vertical-separator {
+    float: left;
+    height: 100%;
+    width: 0px;
+    border-left: 1px solid #cfcfcf;
+    border-right: 1px solid gray;
+}
+
+.horizontal-separator {
+    float: left;
+    width: 100%;
+    height: 0px;
+    
+    border-top: 1px solid #cfcfcf;
+    border-bottom: 1px solid gray;
+}
+/*** Separator END ***/
+
+/*** TabLayout Begin ***/
+.tab-layout {
+    border: 1px solid silver;
+}
+.tab-layout .tab-layout-tabs {
+    min-height: 26px;
+    border-bottom: 1px solid silver;
+}
+
+.tab-layout .tab-layout-view {
+    padding: 1px;
+}
+/*** TabLayout END ***/
